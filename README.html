@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>CVDS - Parcial 2</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h2 id="escuela-colombiana-de-ingeniería">Escuela Colombiana de Ingeniería</h2>
+<h3 id="cvds-ciclos-de-vida-del-desarrollo-de-software">CVDS – Ciclos de Vida del desarrollo de Software</h3>
+<h3 id="parcial-segundo-tercio">Parcial Segundo Tercio</h3>
+<p><strong>IMPORTANTE</strong></p>
+<ul>
+<li>Se puede consultar en la Web: APIs/Documentación de lenguaje y frameworks (Primefaces, Guice, MyBatis, etc), y enunciados de los laboratorios (se pueden revisar los fuentes incluidos con los dichos enunciados).</li>
+<li>No se permite: Usar memorias USB, acceder a redes sociales, clientes de correo, o sistemas de almacenamiento en la nube (Google Drive, DropBox, etc). El uso de éstos implicará anulación.</li>
+<li>Clone el proyecto con GIT, NO lo descargue directamente.</li>
+<li>El filtrado y ordenamiento de los datos DEBE realizarse en el motor de base de datos, a través del uso de SQL. Consultar todos los datos y filtrarlos en el servidor de aplicaciones -que es supremamente INEFICIENTE- se evaluará como INCORRECTO.</li>
+</ul>
+<p>Se le han dado los fuentes de un avance parcial de una plataforma para la administración del contenido educativo de la Escuela. En esta plataforma los usuarios podrán revisar el contenido educativo de la Escuela así como registrarse para distintos cursos. Adicionalmente, hay un usuario administrador del sistema que puede hacer modificaciones a la información almacenada.</p>
+<p>Para el Sprint en curso, se han seleccionado las siguientes historias de usuario del Backlog de producto:</p>
+<p>Recuerde que en el formato XML no se puede utilizar ‘&lt;’ y ‘&gt;’, por ejemplo al realizar comparaciones, utilice ‘&amp;lt;’ o ‘&amp;gt;’ respectivamente.</p>
+<h2 id="historia-de-usuario-1">Historia de usuario #1</h2>
+<blockquote>
+<p><strong>Como</strong> Usuario de la plataforma de la Escuela</p>
+<p><strong>Quiero</strong> Poder consultar las materias de un programa específico.</p>
+<p><strong>Para</strong> Obtener la información de las materias disponibles en el programa.</p>
+<p><strong>Criterio de aceptación:</strong> Se debe mostrar el mnemónico, nombre completo, núcleo al que pertenece, semestre sugerido y número de créditos de la materia. Las materias deben estar organizadas por semestre y luego por mnemónico.</p>
+</blockquote>
+<h2 id="historia-de-usuario-2">Historia de usuario #2</h2>
+<blockquote>
+<p><strong>Como</strong> Usuario de la plataforma</p>
+<p><strong>Quiero</strong> Poder realizar una búsqueda de la materia por palabras similares al nombre.</p>
+<p><strong>Para</strong> Conocer con rapidez la información específica de una materia en particular.</p>
+<p><strong>Criterio de aceptación:</strong> La consulta por “similares” debe coincidir si el nombre incluye la palabra especificada sin importar mayúsculas o minúsculas, ni la ubicación de la misma en el nombre. El reporte debe contener la misma información del reporte anterior donde se muestran las materias.</p>
+</blockquote>
+<h1 id="modelo">Modelo</h1>
+<p>El modelo de base de datos y de clases asociados a la implementación parcial son los siguientes:</p>
+<p><img src="./img/Diagram.png" /></p>
+<p><img src="./img/Model.png" /></p>
+<p>A partir de la aplicación base suministrada, debe realizar lo siguiente:</p>
+<ol type="1">
+<li><p>(20%) A partir de la especificación hecha en los métodos <code>buscarMateriasPorPrograma</code> y <code>buscarMateriasPorSimilares</code> de la fachada de servicios (la parte lógica de la aplicación), implemente sólo una prueba (la que considere más importante para validar las especificaciones y los criterios de aceptación). Siga el esquema usado en <code>DecanaturaServicesTest</code> para poblar la base de datos volátil y verificar el comportamiento de las operaciones de la lógica.</p></li>
+<li><p>(40%) Implemente la historia de usuario #1, agregando todo lo que haga falta en la capa de presentación, lógica y de persistencia. La vista debe implementarse en <code>materia.xhtml</code>: Dados una decanatura y un programa, mostrar las materias disponibles en el plan de estudios de la Escuela.</p></li>
+<li><p>(40%) Implemente la historia de usuario #2, agregando todo lo que haga falta en la capa de presentación, lógica y de persistencia. La vista se puede implementar en donde mejor considere que debería quedar: Mostrar el reporte de las materias que coinciden con la palabra clave.</p></li>
+</ol>
+<h2 id="entrega">Entrega</h2>
+<p>Siga al pie de la letra estas indicaciones para la entrega del examen. EL HACER CASO OMISO DE ESTAS INSTRUCCIONES PENALIZARÁ LA NOTA.</p>
+<ol type="1">
+<li><p>Limpie el proyecto</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1">$ <span class="ex">mvn</span> clean</a></code></pre></div></li>
+<li><p>Configure su usuario de GIT</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1">$ <span class="fu">git</span> config --global user.name <span class="st">&quot;Juan Perez&quot;</span></a>
+<a class="sourceLine" id="cb2-2" title="2">$ <span class="fu">git</span> config --global user.email juan.perez@mail.escuelaing.edu.co</a></code></pre></div></li>
+<li><p>Desde el directorio raíz (donde está este archivo README.md), haga commit de lo realizado.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1">$ <span class="fu">git</span> add .</a>
+<a class="sourceLine" id="cb3-2" title="2">$ <span class="fu">git</span> commit -m <span class="st">&quot;entrega parcial - Juan Perez&quot;</span></a></code></pre></div></li>
+<li><p>Desde este mismo directorio, comprima todo con: (no olvide el punto al final en la segunda instrucción)</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1">$ <span class="fu">zip</span> -r APELLIDO.NOMBRE.zip .</a></code></pre></div></li>
+<li><p>Abra el archivo ZIP creado, y rectifique que contenga lo desarrollado.</p></li>
+<li><p>Suba el archivo antes creado (APELLIDO.NOMBRE.zip) en el espacio de moodle correspondiente.</p></li>
+<li><p>¡IMPORTANTE! Conserve una copia de la carpeta y del archivo .ZIP.</p></li>
+</ol>
+<!-- ## Bono 
+Si después de realizado el parcial, de forma INDIVIDUAL encuentra defectos menores (que impliquen a lo sumo cambiar 5 líneas de código), y que al corregirlos permiten que los puntos 2 o 3 funcionen:
+1. Haga los ajustes en su código.
+2. Haga un nuevo commit con el mensaje "entrega bono, ahora funciona el Punto XX" , donde XX es el punto que se corrigió. 
+3. Ejecute:
+
+    ```bash
+        $ git diff --stat HEAD HEAD^^
+    ```
+
+4. Si el resultado del comando anterior es menor o igual a 10, puede aplicar al bono.
+5. Comprima la nueva versión siguiendo el esquema indicado en el parcial, y envíelo por correo a más tardar el 27 de Marzo a las 11:59pm.
+-->
+</body>
+</html>

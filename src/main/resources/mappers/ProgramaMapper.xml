@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.ProgramaMapper">
+
+	<resultMap type='Programa' id='ProgramaResult'>
+		<id property='id' column='id' />
+		<result property='nivel' column='nivel' />
+		<result property='nombre' column='nombre' />
+		<result property='paginaWeb' column='pagina_web' />
+		<result property='descripcion' column='descripcion' />
+		<result property='decanaturaId' column='decanatura_id' />
+	</resultMap>
+
+	<select id="buscarPorDecanatura" resultMap="ProgramaResult"
+		parameterType="int">
+		SELECT
+			p.id,
+			p.nivel,
+			p.nombre,
+			p.pagina_web,
+			p.descripcion,
+			p.decanatura_id
+		FROM
+			PROGRAMA as p
+		<if test="decanatura != null">
+			WHERE p.decanatura_id = #{decanatura}
+		</if>
+	</select>
+
+</mapper>

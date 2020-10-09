@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.DecanaturaMapper">
+
+	<resultMap type='Decanatura' id='DecanaturaResult'>
+		<id property='id' column='id' />
+		<result property='nombre' column='nombre' />
+		<result property='decano' column='decano' />
+		<result property='paginaWeb' column='pagina_web' />
+	</resultMap>
+
+	<select id="buscarDecanaturas" resultMap="DecanaturaResult"
+		parameterType="int">
+		SELECT
+			d.id,
+			d.nombre,
+			d.decano,
+			d.pagina_web
+		FROM
+			DECANATURA as d
+		<if test="decanaturaId != null">
+			WHERE d.id = #{decanaturaId}
+		</if>
+	</select>
+
+     <insert id="insertarDecanatura" parameterType="edu.eci.cvds.entities.Decanatura">
+        insert into DECANATURA(id, nombre, decano, pagina_web) values (#{id}, #{nombre}, #{decano}, #{paginaWeb})
+    </insert>
+</mapper>
