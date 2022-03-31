@@ -30,4 +30,14 @@
 		</if>
 	</select>
 
+	<select id="buscarPrograma" resultMap="ProgramaResult"
+			parameterType="int">
+		SELECT *
+		FROM
+		PROGRAMA as p
+		<if test="programa != null">
+			WHERE p.id = #{programa}
+		</if>
+	</select>
+
 </mapper>

@@ -28,6 +28,6 @@
 	<mappers>
 		<mapper resource="mappers/DecanaturaMapper.xml"></mapper>
 		<mapper resource="mappers/ProgramaMapper.xml"></mapper>
+		<mapper resource="mappers/MateriaMapper.xml"></mapper>
 	</mappers>
-
 </configuration>

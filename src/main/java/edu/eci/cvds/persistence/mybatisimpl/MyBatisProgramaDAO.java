@@ -23,6 +23,7 @@ import com.google.inject.Inject;
 import edu.eci.cvds.entities.Programa;
 import edu.eci.cvds.persistence.PersistenceException;
 import edu.eci.cvds.persistence.ProgramaDAO;
+import edu.eci.cvds.persistence.mybatisimpl.mappers.MateriaMapper;
 import edu.eci.cvds.persistence.mybatisimpl.mappers.ProgramaMapper;
 
 /**
@@ -32,6 +33,7 @@ public class MyBatisProgramaDAO implements ProgramaDAO {
 
 	@Inject
 	private ProgramaMapper programaMapper;
+
 
 	@Override
 	public List<Programa> buscarTodos() throws PersistenceException {
@@ -50,7 +52,12 @@ public class MyBatisProgramaDAO implements ProgramaDAO {
 
 	@Override
 	public Programa buscar(int programaId) throws PersistenceException {
-		throw new UnsupportedOperationException("Not supported yet.");
+		try {
+			return programaMapper.buscarPrograma(programaId);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			throw new org.apache.ibatis.exceptions.PersistenceException("Load all persistence error");
+		}
 	}
 
 	@Override

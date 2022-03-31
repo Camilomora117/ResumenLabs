@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.MateriaMapper">
+
+    <resultMap type='Materia' id='MateriaResult'>
+        <id property='mnemonico' column='mnemonico' />
+        <result property='nombre' column='nombre' />
+        <result property='programaId' column='programa_id' />
+        <result property='nucleo' column='nucleo' />
+        <result property='creditos' column='creditos' />
+        <result property='semestre' column='semestre' />
+    </resultMap>
+
+    <select id="buscarMateriasPorPrograma" resultMap="MateriaResult"
+            parameterType="int">
+            SELECT
+                m.semestre,
+                m.mnemonico,
+                m.nombre,
+                m.nucleo,
+                m.creditos
+            FROM
+                MATERIA as m
+            WHERE
+                m.programa_id = #{programa}
+            ORDER BY
+                m.semestre,m.mnemonico
+    </select>
+
+    <select id="buscarMateriasPorSimilares" resultMap="MateriaResult"
+            parameterType="int">
+            SELECT
+                m.semestre,
+                m.mnemonico,
+                m.nombre,
+                m.nucleo,
+                m.creditos
+            FROM
+                MATERIA as m
+            WHERE
+                m.programa_id = #{programa} AND m.nombre LIKE '%#{materia}%'
+            ORDER BY
+                m.semestre,m.mnemonico
+    </select>
+
+</mapper>

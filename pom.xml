@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>edu.eci.cvds</groupId>
-    <artifactId>parcial-2-20191</artifactId>
+    <artifactId>parcial-2-20202</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
 
-	<name>Parcial 2 - 2019-1</name>
+	<name>Parcial 2 - 2020-2</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -38,7 +38,7 @@
 		<dependency>
 			<groupId>com.google.inject</groupId>
 			<artifactId>guice</artifactId>
-			<version>4.2.0</version>
+			<version>5.1.0</version>
 		</dependency>
 
 		<!-- Database connection dependencies -->
@@ -174,7 +174,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>2.3</version>
+                <version>3.3.2</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>

@@ -27,6 +27,12 @@
 		<p:column headerText="Descripción">
 			<h:outputText value="#{programa.descripcion}" />
 		</p:column>
+		<p:column headerText="Materias">
+			<p:button outcome="materia?programa=#{programa.id}" value="Ver Materias" />
+		</p:column>
+		<p:column headerText="Materias">
+			<p:button outcome="materia?programa=#{programa.id}" value="Ver Materias" />
+		</p:column>
 	</p:dataTable>
 </h:body>
 </html>

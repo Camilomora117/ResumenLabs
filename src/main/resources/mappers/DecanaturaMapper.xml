@@ -29,4 +29,5 @@
      <insert id="insertarDecanatura" parameterType="edu.eci.cvds.entities.Decanatura">
         insert into DECANATURA(id, nombre, decano, pagina_web) values (#{id}, #{nombre}, #{decano}, #{paginaWeb})
     </insert>
+
 </mapper>

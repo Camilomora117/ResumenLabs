@@ -12,6 +12,10 @@ public class Materia {
 	private String nucleo;
 	private int creditos;
 
+	public Materia() {
+		super();
+	}
+
 	public Materia(String mnemonico, int semestre, String nombre, int programaId, String nucleo, int creditos) {
 		this.mnemonico = mnemonico;
 		this.semestre = semestre;
@@ -41,6 +45,10 @@ public class Materia {
 		return creditos;
 	}
 
+	public int getSemestre() {
+		return semestre;
+	}
+
 	public void setMnemonico(String mnemonico) {
 		this.mnemonico = mnemonico;
 	}
@@ -60,6 +68,11 @@ public class Materia {
 	public void setCreditos(int creditos) {
 		this.creditos = creditos;
 	}
+
+	public void setSemestre(int semestre) {
+		this.semestre = semestre;
+	}
+
 
 	/*
 	 * (non-Javadoc)

@@ -72,6 +72,14 @@ public interface DecanaturaServices {
 	public List<Materia> buscarMateriasPorSimilares(String palabraClave) throws ServicesException;
 
 	/**
+	 * Consultar todas las materias
+	 *
+	 * @return la lista de materiasg
+	 * @throws ServicesException
+	 */
+	public List<Materia> listarMaterias() throws ServicesException;
+
+	/**
 	 * Crear una materia
 	 * 
 	 * @param materia
